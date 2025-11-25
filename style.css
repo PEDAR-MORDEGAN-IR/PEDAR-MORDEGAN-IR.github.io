@@ -6,272 +6,162 @@ body {
     color: #e2e2e2;
     overflow-x: hidden;
 }
-/* ---------- GHOSTFACE HEADER FIX ---------- */
 
-.cyber-header h1 {
-    font-size: 4.5em;
-    color: #ff002e;
-    letter-spacing: 7px;
-    text-shadow:
-        0 0 25px #ff002e,
-        0 0 55px #ff0037,
-        0 0 80px #ff0022;
-    animation: ghostPulse 3s infinite ease-in-out;
+/* ---------------- SPLASH SCREEN ---------------- */
+#splash {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: black;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeOut 5s forwards;
+}
+
+.splash-text h2 {
+    font-size: 3em;
+    color: #ff0037;
+    text-shadow: 0 0 25px red;
+}
+
+.splash-text p {
+    font-size: 1.3em;
+    opacity: 0.8;
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { opacity: 0; visibility: hidden; }
+}
+
+/* ---------------- CYBER HEADER ---------------- */
+
+.cyber-header {
+    text-align: center;
+    padding: 60px 0;
     position: relative;
 }
 
-/* موج تکنولوژیک پشت نوشته */
-.cyber-header h1::after {
+.title-glitch {
+    font-size: 4.5em;
+    font-weight: bold;
+    letter-spacing: 7px;
+    color: #ff003c;
+    text-shadow:
+        0 0 20px #ff002e,
+        0 0 50px #ff0037;
+    position: relative;
+    animation: ghostPulse 3s infinite ease-in-out;
+}
+
+/* سایه تکنولوژیک پشت هدر */
+.title-glitch::after {
     content: "GHOST FACE";
     position: absolute;
-    left: 50%;
     top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
     color: transparent;
     text-shadow:
-        0 0 15px #ff0022,
-        0 0 35px #ff0037,
-        0 0 60px #ff0022;
+        0 0 25px #ff0022,
+        0 0 55px #ff0055,
+        0 0 85px #ff0044;
     filter: blur(4px);
     opacity: 0.6;
     animation: techWave 5s infinite linear;
 }
 
+/* انیمیشن‌ها */
 @keyframes ghostPulse {
-    0% { text-shadow: 0 0 25px #ff0037; }
+    0% { text-shadow: 0 0 20px #ff0037; }
     50% { text-shadow: 0 0 70px #ff0037; }
-    100% { text-shadow: 0 0 25px #ff0037; }
+    100% { text-shadow: 0 0 20px #ff0037; }
 }
 
 @keyframes techWave {
     0% { transform: translate(-50%, -50%) scale(1); }
-    50% { transform: translate(-50%, -50%) scale(1.03); }
+    50% { transform: translate(-50%, -50%) scale(1.04); }
     100% { transform: translate(-50%, -50%) scale(1); }
 }
 
-
-/* DIGITAL NOISE */
-.cyber-noise {
-    width: 100%;
-    height: 60px;
-    margin: 10px 0;
-    background: repeating-linear-gradient(
-        to bottom,
-        rgba(255,0,0,0.15),
-        rgba(255,0,0,0.05) 3px
-    );
-    animation: noise 0.3s infinite;
+/* ======= خطوط نئون ======= */
+.neon-line {
+    width: 70%;
+    height: 3px;
+    margin: 20px auto;
+    background: linear-gradient(90deg, transparent, #ff0037, transparent);
+    animation: neonFlow 3s infinite linear;
 }
 
-/* SECTION GLASS BOXES */
+@keyframes neonFlow {
+    0% { filter: blur(2px); opacity: 0.4; }
+    50% { filter: blur(4px); opacity: 1; }
+    100% { filter: blur(2px); opacity: 0.4; }
+}
+
+/* SECTION STYLES */
 .section-box {
-    width: 85%;
+    background: rgba(0, 0, 0, 0.65);
     margin: 40px auto;
-    padding: 25px;
-    background: rgba(0, 0, 0, 0.55);
-    backdrop-filter: blur(18px);
-    border-radius: 20px;
-    border: 1px solid #900;
-    box-shadow: 0 0 25px #600, inset 0 0 20px #900;
-    opacity: 0;
-    transform: translateY(30px);
-    transition: 0.8s ease;
-}
-
-.section-title {
-    text-align: center;
-    color: #ff2a2a;
-    font-size: 30px;
-    text-shadow: 0 0 12px red;
+    padding: 30px;
+    width: 85%;
+    border-radius: 15px;
+    backdrop-filter: blur(4px);
+    border: 2px solid rgba(255, 0, 55, 0.4);
+    box-shadow: 0 0 25px rgba(255, 0, 55, 0.6);
 }
 
 /* SKILLS */
 .skills-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 18px;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 20px;
 }
 
 .skill-card {
-    padding: 12px 28px;
-    background: linear-gradient(135deg, #200, #900);
+    padding: 15px;
+    text-align: center;
+    background: rgba(20, 0, 0, 0.6);
+    border: 1px solid #ff0037;
     border-radius: 12px;
-    transition: 0.3s;
-    box-shadow: 0 0 15px red;
+    box-shadow: 0 0 18px #ff0037;
+    transition: .3s;
 }
 
 .skill-card:hover {
-    transform: scale(1.12);
-    box-shadow: 0 0 35px red;
+    transform: scale(1.1);
+    box-shadow: 0 0 35px #ff005c;
 }
 
 /* GALLERY */
 .gallery-grid {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
     gap: 20px;
-    justify-content: center;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 }
 
 .gallery-item {
-    width: 260px;
-    height: 170px;
-    border-radius: 10px;
-    border: 2px solid #700;
-    box-shadow: 0 0 20px #900;
+    width: 100%;
+    border-radius: 15px;
+    border: 2px solid #ff0037;
+    box-shadow: 0 0 30px #ff0037;
     transition: 0.3s;
-    object-fit: cover;
 }
 
-.matrix:hover {
-    transform: scale(1.12);
-    filter: brightness(115%);
-    box-shadow: 0 0 45px red;
-}
-
-/* CONTACT */
-.contact-box {
-    text-align: center;
-    font-size: 20px;
-    line-height: 2;
+.gallery-item:hover {
+    transform: scale(1.05);
 }
 
 /* FOOTER */
 .footer {
-    padding: 25px;
     text-align: center;
-    color: red;
-    text-shadow: 0 0 10px red;
-    background: rgba(0,0,0,0.85);
-    letter-spacing: 5px;
-}
-
-/* ANIMATIONS */
-@keyframes pulse {
-    50% { box-shadow: 0 0 45px red; }
-}
-
-@keyframes glitch {
-    0%, 100% { text-shadow: 0 0 15px red; }
-    50% { text-shadow: -5px 0 red, 5px 0 #900; }
-}
-
-@keyframes noise {
-    0% { opacity: 0.5; }
-    50% { opacity: 1; }
-    100% { opacity: 0.5; }
-}
-
-/* SCROLL REVEAL */
-.show {
-    opacity: 1 !important;
-    transform: translateY(0) !important;
-}
-/* 🔥 CYBER ELECTRIC FRAME FOR GALLERY ITEMS 🔥 */
-
-.gallery-item {
-    position: relative;
-    border: none !important;  /* حذف بورد قدیمی */
-    z-index: 1;
-}
-
-.gallery-item::after {
-    content: "";
-    position: absolute;
-    inset: -3px;
-    border-radius: inherit;
-    background: url('https://i.imgur.com/4bSgP0G.gif'); /* افکت الکتریکی */
-    background-size: cover;
-    mix-blend-mode: screen;
-    opacity: 0.55;
-    border-radius: 14px;
-    animation: electricPulse 2.2s infinite linear;
-    z-index: -1;
-}
-
-@keyframes electricPulse {
-    0% { opacity: 0.4; filter: hue-rotate(0deg); }
-    50% { opacity: 0.8; filter: hue-rotate(40deg); }
-    100% { opacity: 0.4; filter: hue-rotate(0deg); }
-}
-/* 🔻 CYBER PANEL DECORATION */
-
-.panel {
-    position: relative;
-    overflow: hidden;
-}
-
-.panel::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -120%;
-    width: 200%;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, #ff0037, transparent);
-    animation: scanline 4s infinite linear;
-}
-
-.panel::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: repeating-linear-gradient(
-        135deg,
-        transparent 0px,
-        transparent 8px,
-        rgba(255, 0, 50, 0.08) 9px
-    );
-    pointer-events: none;
-}
-
-@keyframes scanline {
-    0% { left: -120%; }
-    100% { left: 120%; }
-}
-/* 🔥 SPLASH SCREEN (5 SECONDS) 🔥 */
-#splash {
-    position: fixed;
-    inset: 0;
-    background: radial-gradient(circle, #1a0000, #000000);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 99999;
-    animation: fadeOut 5s forwards ease-in-out;
-}
-
-.splash-text {
-    text-align: center;
-    color: #ff002e;
-    font-family: "Poppins", sans-serif;
-    animation: glow 2.5s infinite alternate;
-}
-
-.splash-text h2 {
-    font-size: 3em;
-    letter-spacing: 4px;
-}
-
-.splash-text p {
-    font-size: 1.6em;
-    margin-top: 10px;
-}
-
-/* افکت محو شدن صفحه */
-@keyframes fadeOut {
-    0% { opacity: 1; }
-    80% { opacity: 1; }
-    100% { opacity: 0; visibility: hidden; }
-}
-
-/* افکت نئون */
-@keyframes glow {
-    0% {
-        text-shadow: 0 0 10px #ff002e;
-    }
-    100% {
-        text-shadow: 0 0 35px #ff0037, 0 0 60px #ff002e;
-    }
+    padding: 20px;
+    margin-top: 40px;
+    color: #ff0037;
+    text-shadow: 0 0 12px #ff0037;
 }
