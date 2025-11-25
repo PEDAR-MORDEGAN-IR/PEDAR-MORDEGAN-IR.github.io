@@ -1,7 +1,4 @@
-// ===============================
-// 🔥 Scroll Reveal Animation
-// ===============================
-
+// Scroll Reveal Animation
 const boxes = document.querySelectorAll(".fade");
 
 window.addEventListener("scroll", () => {
@@ -13,31 +10,10 @@ window.addEventListener("scroll", () => {
     });
 });
 
-
-// ===============================
-// 🔥 SPLASH SCREEN (Only First Visit)
-// ===============================
-
-// آیا قبلاً وارد سایت شده؟
-if (!localStorage.getItem("visited_once")) {
-    
-    // وقتی اولین بار وارد شد → بعد 5 ثانیه اسپلش حذف کن
+// Remove splash screen after 5 seconds (ONLY ON index.html)
+if (document.getElementById("splash")) {
     setTimeout(() => {
-        const splash = document.getElementById("splash");
-        if (splash) splash.classList.add("hide");
-        
-        // بعد از محو شدن کامل حذفش کن
-        setTimeout(() => {
-            if (splash) splash.remove();
-        }, 700);
-
+        document.getElementById("splash").remove();
     }, 5000);
-
-    // ثبت کن که یبار اسپلش نمایش داده شده
-    localStorage.setItem("visited_once", "true");
-
-} else {
-    // اگر قبلاً داخل سایت شده → کلاً اسپلش رو حذف کن
-    const splash = document.getElementById("splash");
-    if (splash) splash.remove();
 }
+
