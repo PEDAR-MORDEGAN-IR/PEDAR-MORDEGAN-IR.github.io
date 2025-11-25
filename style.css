@@ -305,4 +305,35 @@ body {
         height: 260px;
     }
 }
+/* ===========================
+   🔥 CYBER MENU
+=========================== */
+
+.cyber-menu {
+    display: flex;
+    gap: 25px;
+    margin-top: 15px;
+    align-self: flex-start;     /* منو رو می‌بره سمت چپ */
+    margin-left: 40px;          /* فاصله از لبه */
+}
+
+.cyber-menu a {
+    text-decoration: none;
+    color: #ff002e;
+    font-size: 1.25em;
+    font-weight: 600;
+    padding: 8px 18px;
+    border: 2px solid #ff002e;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.45);
+    box-shadow: 0 0 10px #ff002e77;
+    transition: 0.3s ease-in-out;
+}
+
+.cyber-menu a:hover {
+    background: #ff002e;
+    color: #000;
+    box-shadow: 0 0 25px #ff0037;
+    transform: scale(1.1);
+}
 
