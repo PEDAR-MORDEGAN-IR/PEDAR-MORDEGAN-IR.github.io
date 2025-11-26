@@ -10,7 +10,7 @@ body {
 }
 
 /* ===========================
-   HEADER (بدون گلیچ)
+   HEADER (بدون گلیچ – فقط نور نرم)
 =========================== */
 
 .cyber-header {
@@ -21,7 +21,7 @@ body {
     padding-bottom: 25px;
 }
 
-/* نور پس زمینه ملایم */
+/* نور سفید نرم زیر هدر */
 .cyber-header::after {
     content: "";
     position: absolute;
@@ -35,12 +35,18 @@ body {
     z-index: -1;
 }
 
-/* متن هدر — سفید + نور کم */
 .title-glitch {
     font-size: 3.6em;
     font-weight: 900;
     color: #fff;
-    text-shadow: 0 0 20px #fff;
+    text-shadow: 0 0 25px #ffffffaa; /* نور سفید نرم */
+    position: relative;
+}
+
+/* افکت آبی و قرمز کاملاً حذف شد */
+.title-glitch::before,
+.title-glitch::after {
+    content: none !important;
 }
 
 /* ===========================
@@ -72,7 +78,7 @@ body {
     transform: translateY(-2px);
 }
 
-/* خط محو زیر منو */
+/* خط محوی که گفتی */
 .top-menu::after {
     content: "";
     position: absolute;
