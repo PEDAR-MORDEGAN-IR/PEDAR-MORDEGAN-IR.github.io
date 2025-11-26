@@ -305,3 +305,48 @@ body {
         font-size: 3.5em;
     }
 }
+/* ===========================
+   HEADER MENU (UNDER TITLE)
+=========================== */
+
+.header-menu {
+    margin-top: 10px;
+    display: flex;
+    gap: 20px;
+    justify-content: flex-start;
+    padding-left: 20px;
+}
+
+.header-menu a {
+    text-decoration: none;
+    color: #ff002e;
+    padding: 6px 14px;
+    border: 2px solid #ff002e;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.45);
+    font-size: 1.1em;
+    font-weight: 600;
+    transition: .3s;
+    box-shadow: 0 0 10px #ff002e55;
+}
+
+.header-menu a:hover {
+    background: #ff002e;
+    color: black;
+    box-shadow: 0 0 20px #ff0037;
+    transform: scale(1.1);
+}
+
+/* موبایل */
+@media (max-width: 600px) {
+    .header-menu {
+        margin-top: 8px;
+        gap: 12px;
+        padding-left: 10px;
+    }
+
+    .header-menu a {
+        padding: 5px 10px;
+        font-size: 0.85em;
+    }
+}
