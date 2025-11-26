@@ -10,56 +10,50 @@ body {
 }
 
 /* ===========================
-   HEADER
+   HEADER (بدون گلیچ)
 =========================== */
 
 .cyber-header {
     text-align: center;
     margin-top: 60px;
-    margin-bottom: 70px;
+    margin-bottom: 50px;
     position: relative;
     padding-bottom: 25px;
 }
 
-/* نور پس‌زمینه ساده و سفید (بدون رنگ بنفش/آبی) */
+/* نور پس زمینه ملایم */
 .cyber-header::after {
     content: "";
     position: absolute;
-    bottom: -16px;
+    bottom: -12px;
     left: 50%;
     transform: translateX(-50%);
-    width: 320px;
-    height: 55px;
-    background: radial-gradient(circle, rgba(255,255,255,0.30), transparent 70%);
-    filter: blur(22px);
+    width: 280px;
+    height: 45px;
+    background: radial-gradient(circle, rgba(255,255,255,0.35), transparent 70%);
+    filter: blur(18px);
     z-index: -1;
 }
 
-/* عنوان هدر — ساده و واضح، بدون رنگ‌های اضافی */
+/* متن هدر — سفید + نور کم */
 .title-glitch {
-    font-size: 3.8em;
+    font-size: 3.6em;
     font-weight: 900;
-    color: #ffffff;
-    position: relative;
-    display: inline-block;
-    text-shadow: 0 0 14px rgba(255,255,255,0.65);
+    color: #fff;
+    text-shadow: 0 0 20px #fff;
 }
 
-/* حذف تمام pseudo-element رنگی — فقط متن اصلی نمایش داده می‌شود */
-/* اگر قبلاً data-text استفاده شده بود، الان نادیده گرفته می‌شود */
-
 /* ===========================
-   TOP MENU (زیر هدر)
+   TOP MENU
 =========================== */
 
 .top-menu {
     position: absolute;
-    top: 155px;
+    top: 145px;
     left: 50px;
     display: flex;
     gap: 20px;
     padding: 10px;
-    z-index: 10;
 }
 
 .top-menu a {
@@ -68,7 +62,7 @@ body {
     text-decoration: none;
     padding: 7px 14px;
     border-radius: 6px;
-    background: rgba(255,255,255,0.06);
+    background: rgba(255,255,255,0.07);
     backdrop-filter: blur(3px);
     transition: 0.25s;
 }
@@ -78,15 +72,15 @@ body {
     transform: translateY(-2px);
 }
 
-/* خط محو زیر منو — سفید/شفاف، بدون رنگ بنفش */
+/* خط محو زیر منو */
 .top-menu::after {
     content: "";
     position: absolute;
-    bottom: -10px;
+    bottom: -8px;
     left: -5px;
     width: 150%;
     height: 4px;
-    background: radial-gradient(circle, rgba(255,255,255,0.40), transparent 70%);
+    background: radial-gradient(circle, rgba(255,255,255,0.45), transparent 70%);
     filter: blur(6px);
 }
 
@@ -148,7 +142,6 @@ body {
     border-radius: 15px;
     border: 3px solid #ff002e;
     box-shadow: 0 0 20px #ff002eaa;
-    object-fit: cover;
 }
 
 /* ===========================
@@ -180,19 +173,17 @@ body {
 =========================== */
 
 @media (max-width: 600px) {
-    .title-glitch { font-size: 2.4em; }
-    .top-menu { top: 130px; left: 15px; gap: 10px; }
-    .top-menu a { font-size: 0.88em; padding: 5px 10px; }
-    .section-box { width: 92%; margin: 40px auto; padding: 18px; }
+    .title-glitch { font-size: 2.2em; }
+    .top-menu { top: 120px; left: 15px; gap: 10px; }
+    .top-menu a { font-size: 0.9em; padding: 5px 10px; }
 }
 
 @media (min-width: 600px) and (max-width: 900px) {
-    .title-glitch { font-size: 3.1em; }
-    .top-menu { top: 140px; left: 30px; }
-    .section-box { width: 90%; padding: 22px; }
+    .title-glitch { font-size: 3em; }
+    .top-menu { top: 130px; left: 25px; }
 }
 
 @media (min-width: 900px) and (max-width: 1200px) {
-    .title-glitch { font-size: 3.5em; }
-    .top-menu { top: 150px; left: 40px; }
+    .title-glitch { font-size: 3.3em; }
+    .top-menu { top: 140px; left: 40px; }
 }
